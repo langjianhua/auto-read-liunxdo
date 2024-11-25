@@ -327,7 +327,9 @@
   // 判断是否启用自动点赞
   function isAutoLikeEnabled() {
     // 从localStorage获取autoLikeEnabled的值，如果未设置，默认为"true"
-    return localStorage.getItem("autoLikeEnabled") !== "false";
+    //return localStorage.getItem("autoLikeEnabled") !== "false";
+    //默认为不点赞
+    return false;
   }
 
   // 设置自动点赞的启用状态
