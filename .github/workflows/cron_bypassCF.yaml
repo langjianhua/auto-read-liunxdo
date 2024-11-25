@@ -64,3 +64,13 @@ jobs:
 
       - name: Run a script
         run: node bypasscf.js --USERNAMES "$USERNAMES" --PASSWORDS "$PASSWORDS" --WEBSITE "$WEBSITE"
+        id: run-script
+        continue-on-error: true
+        
+      - name: Check if tests passed
+        if: ${{ steps.run-script.outcome == 'success' }}
+        run: curl -X GET "https://www.loveapple.cool/message/自动阅读成功"
+
+      - name: Check if tests failed
+        if: ${{ steps.run-script.outcome == 'failure' }}
+        run: curl -X GET "https://www.loveapple.cool/message/自动阅读失败"
