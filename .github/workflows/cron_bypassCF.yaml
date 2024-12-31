@@ -64,3 +64,5 @@ jobs:
 
       - name: Run a script
         run: node bypasscf.js --USERNAMES "$USERNAMES" --PASSWORDS "$PASSWORDS" --WEBSITE "$WEBSITE"
+      - name: Run a message
+        run: curl https://www.loveapple.cool/message/自动阅读完成
