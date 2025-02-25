@@ -3,7 +3,7 @@ name: readLike（自动阅读随机点赞）
 on:
   schedule:
     # 每天 UTC 时间 19:40 运行
-    - cron: "40 19 * * *"
+    - cron: "40 20 * * *"
   workflow_dispatch: # 允许手动触发
 
 jobs:
@@ -64,3 +64,5 @@ jobs:
 
       - name: Run a script
         run: node bypasscf.js --USERNAMES "$USERNAMES" --PASSWORDS "$PASSWORDS" --WEBSITE "$WEBSITE"
+      - name: send message
+        run: curl  https://www.loveapple.cool/message/阅读完成
