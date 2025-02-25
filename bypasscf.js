@@ -56,7 +56,7 @@ const delayBetweenInstances = 10000;
 const totalAccounts = usernames.length; // 总的账号数
 const delayBetweenBatches =
   runTimeLimitMillis / Math.ceil(totalAccounts / maxConcurrentAccounts);
-const isLikeSpecificUser = process.env.LIKE_SPECIFIC_USER || "false";
+const isLikeSpecificUser = "false";
 const isAutoLike = process.env.AUTO_LIKE || "true";
 let bot;
 if (token && chatId) {
